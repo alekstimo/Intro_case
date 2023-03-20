@@ -19,18 +19,27 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signinWithGoogleButton: UIButton!
     
     var coordinator: StartFlow?
+    var usersStorage = UserSettings.shared
     
     @IBAction func signinButtonTouched(_ sender: Any) {
-        guard let firstName = firstNameTextField.text, let lastName = lastNameTexField.text, let email = emailTextField.text else {
+        guard firstNameTextField.text != "", lastNameTexField.text  != "" , emailTextField.text  != "" else {
             showAlert(text: "Ошибка", description: "Поля не должны быть пустыми")
             return
         }
+        let firstName = firstNameTextField.text!
+        let lastName = lastNameTexField.text!
+        let email = emailTextField.text!
+        
         guard isValidEmail(email) else {
             showAlert(text: "Ошибка", description: "Ошибка валидации Email")
             return
         }
-        print(firstName + " " + lastName)
-        
+        guard !usersStorage.isKeyPresentInUserDefaults(key: firstName) else {
+            showAlert(text: "Ошибка", description: "Пользователь с такими данными уже есть")
+            return
+        }
+        usersStorage.appendItem(item: Users(email: email, firstname: firstName, lastname: lastName, password: "1234"))
+        currentUser = firstName + " " + lastName
         coordinator?.coordinateToTabBar()
     }
     @IBAction private func SigninWithGoogleButtonTouched(_ sender: Any) {

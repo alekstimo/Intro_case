@@ -59,6 +59,7 @@
 		6E76C8B629C86B1D001A243A /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8B529C86B1C001A243A /* LogInCoordinator.swift */; };
 		6E76C8BA29C871C1001A243A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8B829C871C0001A243A /* ProfileTableViewCell.swift */; };
 		6E76C8BB29C871C1001A243A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E76C8B929C871C1001A243A /* ProfileTableViewCell.xib */; };
+		6E76C8BF29C8AD07001A243A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8BE29C8AD07001A243A /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		6E76C8B529C86B1C001A243A /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
 		6E76C8B829C871C0001A243A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		6E76C8B929C871C1001A243A /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		6E76C8BE29C8AD07001A243A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		6E215E3529C1A3A0003B5C33 /* intro_case */ = {
 			isa = PBXGroup;
 			children = (
+				6E76C8BC29C8AC57001A243A /* Services */,
 				6E76C89A29C48F20001A243A /* ProfileModule */,
 				6E76C89929C48F15001A243A /* MessageModule */,
 				6E76C89829C48F0A001A243A /* BasketModule */,
@@ -309,6 +312,22 @@
 			path = ProfileCells;
 			sourceTree = "<group>";
 		};
+		6E76C8BC29C8AC57001A243A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6E76C8BD29C8ACBC001A243A /* UserDefaults */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6E76C8BD29C8ACBC001A243A /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				6E76C8BE29C8AD07001A243A /* UserSettings.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,6 +448,7 @@
 				6E76C88F29C48DBD001A243A /* FavoriteCoordinator.swift in Sources */,
 				6E76C8A529C496EF001A243A /* BasketViewController.swift in Sources */,
 				6E76C87A29C46EA6001A243A /* Coordnator.swift in Sources */,
+				6E76C8BF29C8AD07001A243A /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

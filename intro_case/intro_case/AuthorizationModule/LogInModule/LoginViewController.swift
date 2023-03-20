@@ -16,6 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
    
+    var coordinator: LogInFlow?
+    var usersStorage = UserSettings.shared
+    
     //MARK: show Password Button Touch Up inside
     @IBAction func showPasswordButtonTouchUp(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
@@ -23,11 +26,23 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func logInButtonTouched(_ sender: Any) {
-        guard let firstName = firstNameTextField.text, let password = passwordTextField.text else {
+        guard firstNameTextField.text != "",passwordTextField.text != "" else {
             showAlert(text: "Ошибка", description: "Поля не должны быть пустыми")
             return
         }
-        print(firstName + " " + password)
+        let firstName = firstNameTextField.text!
+        let password = passwordTextField.text!
+        guard usersStorage.isKeyPresentInUserDefaults(key: firstName) else {
+            showAlert(text: "Ошибка", description: "Пользователя с таким именем не существует")
+            return
+        }
+        let checkPassword = usersStorage.getPasswordFromStoredItems(key: firstName)
+        guard checkPassword == password else {
+            showAlert(text: "Ошибка", description: "Неверный логин или пароль")
+            return
+        }
+        currentUser = usersStorage.getFullNameFromStoredItems(key: firstName)
+        //print(firstName + " " + password)
         coordinator?.coordinateToTabBar()
     }
     
@@ -37,7 +52,7 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    var coordinator: LogInFlow?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

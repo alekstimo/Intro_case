@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
 private extension ProfileViewController {
     func configureAppearance() {
         view.backgroundColor = UIColor(named: "backgroundColor")
-        nameLabel.text = "Aboba"
+        nameLabel.text = currentUser
         configureTableView()
         uploadButton.layer.cornerRadius = 15
     }
@@ -137,6 +137,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.row == 6 else { return }
+        currentUser = " "
         coordinator?.coordinateToSignIn()
     }
 
