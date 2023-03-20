@@ -10,20 +10,22 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-var window: UIWindow?
+    var window: UIWindow?
+    var coordinator: MainCoordinator?
 
-    
-//
-//    var tokenStorage: TokenStorage {
-//        BaseTokenStorage()
-//    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        let viewController = SignInViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navigationController
+        
+        
+        coordinator = MainCoordinator(window: window!)
+        coordinator?.start()
+        
+        
+//        let viewController = SignInViewController()
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        
+//        window?.rootViewController = navigationController
         //startApplicationProccess()
         return true
     }

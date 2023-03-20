@@ -107,7 +107,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v09-21-9sD">
-                    <rect key="frame" x="120.66666666666667" y="591" width="146.66666666666663" height="28.666666666666629"/>
+                    <rect key="frame" x="120.66666666666667" y="591" width="146.66666666666663" height="28"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title=" Sign in with Google">
@@ -118,7 +118,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCn-zN-Fa6">
-                    <rect key="frame" x="117.33333333333333" y="649.66666666666663" width="135.66666666666669" height="28.666666666666629"/>
+                    <rect key="frame" x="117.33333333333333" y="649" width="135.66666666666669" height="28"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Sign in with Apple">
@@ -129,14 +129,14 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="googleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="duA-g0-MAA">
-                    <rect key="frame" x="99" y="593.33333333333337" width="23.666666666666671" height="24.333333333333371"/>
+                    <rect key="frame" x="99" y="593" width="23.666666666666671" height="24.333333333333371"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24.219999999999999" id="j7z-jr-WfR"/>
                         <constraint firstAttribute="width" constant="23.829999999999998" id="y2g-pV-JOA"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="TiV-98-z7q">
-                    <rect key="frame" x="99" y="653.33333333333337" width="18.333333333333329" height="21.666666666666629"/>
+                    <rect key="frame" x="99" y="652.33333333333337" width="18.333333333333329" height="21.666666666666629"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21.870000000000001" id="FlS-uR-PCe"/>
                         <constraint firstAttribute="width" constant="18.379999999999999" id="j4p-eU-SgS"/>

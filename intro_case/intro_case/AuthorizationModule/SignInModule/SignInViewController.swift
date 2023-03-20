@@ -17,11 +17,21 @@ class SignInViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet weak var signInWithAppleButton: UIButton!
     @IBOutlet weak var signinWithGoogleButton: UIButton!
+    
+    var coordinator: StartFlow?
+    
     @IBAction func signinButtonTouched(_ sender: Any) {
+        coordinator?.coordinateToTabBar()
     }
     @IBAction private func SigninWithGoogleButtonTouched(_ sender: Any) {
+        let alert = UIAlertController(title: "Вход", message: "Войти через Google", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     @IBAction private func signinWithAppleButtonTouched(_ sender: Any) {
+        let alert = UIAlertController(title: "Вход", message: "Войти через Apple", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonTouched(_ sender: Any) {
@@ -33,7 +43,6 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        // Do any additional setup after loading the view.
     }
 
     private func configure() {
