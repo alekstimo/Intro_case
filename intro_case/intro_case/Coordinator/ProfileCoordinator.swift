@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 
-class ProfileCoordinator: Coordinator {
+protocol ProfileFlow: class {
+    func coordinateToSignIn()
+}
+class ProfileCoordinator: Coordinator, ProfileFlow {
     
     weak var navigationController: UINavigationController?
     
@@ -22,6 +25,12 @@ class ProfileCoordinator: Coordinator {
         profileViewController.coordinator = self
         
         navigationController?.pushViewController(profileViewController, animated: false)
+    }
+    
+    func coordinateToSignIn() {
+        
+        let signInCoordinator = StartCoordinator(navigationController: navigationController!)
+        coordinate(to: signInCoordinator)
     }
    
 }

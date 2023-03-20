@@ -21,23 +21,27 @@ class SignInViewController: UIViewController {
     var coordinator: StartFlow?
     
     @IBAction func signinButtonTouched(_ sender: Any) {
+        guard let firstName = firstNameTextField.text, let lastName = lastNameTexField.text, let email = emailTextField.text else {
+            showAlert(text: "Ошибка", description: "Поля не должны быть пустыми")
+            return
+        }
+        guard isValidEmail(email) else {
+            showAlert(text: "Ошибка", description: "Ошибка валидации Email")
+            return
+        }
+        print(firstName + " " + lastName)
+        
         coordinator?.coordinateToTabBar()
     }
     @IBAction private func SigninWithGoogleButtonTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Вход", message: "Войти через Google", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        showAlert(text: "Вход", description:"Войти через Google")
     }
     @IBAction private func signinWithAppleButtonTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Вход", message: "Войти через Apple", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        showAlert(text: "Вход", description: "Войти через Apple")
     }
     
     @IBAction func loginButtonTouched(_ sender: Any) {
-        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-        let vc = LoginViewController()
-        appDelegate.window?.rootViewController = vc
+        coordinator?.coordinateToLogIn()
     }
     
     override func viewDidLoad() {
@@ -72,6 +76,7 @@ class SignInViewController: UIViewController {
         
         
         
+        
 //        guard let montserratForSignInButton = UIFont(name: "Montserrat-SemiBold", size: 20) else {
 //            fatalError("""
 //                Failed to load the "Montserrat" font.
@@ -103,6 +108,17 @@ class SignInViewController: UIViewController {
 //        signinWithGoogleButton.titleLabel?.font = UIFontMetrics.default.scaledFont(for: montserratForLogInButton)
 //        signinWithGoogleButton.titleLabel?.adjustsFontForContentSizeCategory = true
 //        
+    }
+    private func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._$+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emalPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emalPred.evaluate(with: email)
+    }
+    private func showAlert(text: String, description: String){
+        let alert = UIAlertController(title: text, message: description, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 

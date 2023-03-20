@@ -21,6 +21,24 @@ class LoginViewController: UIViewController {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
     }
     
+    
+    @IBAction func logInButtonTouched(_ sender: Any) {
+        guard let firstName = firstNameTextField.text, let password = passwordTextField.text else {
+            showAlert(text: "Ошибка", description: "Поля не должны быть пустыми")
+            return
+        }
+        print(firstName + " " + password)
+        coordinator?.coordinateToTabBar()
+    }
+    
+    private func showAlert(text: String, description: String){
+        let alert = UIAlertController(title: text, message: description, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    var coordinator: LogInFlow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -50,6 +68,12 @@ class LoginViewController: UIViewController {
         
         passwordTextField.isSecureTextEntry = true
         
+        let backButton = UIBarButtonItem(image: resizeImage(image: UIImage(named: "backArrow")!, targetSize: CGSize.init(width: 32, height: 32)),
+                                         style: .plain,
+                                         target: navigationController,
+                                         action: #selector(UINavigationController.popViewController(animated:)))
+        navigationItem.leftBarButtonItem = backButton
+        navigationItem.leftBarButtonItem?.tintColor = .black
         
 //        guard let montserrat = UIFont(name: "Montserrat-SemiBold", size: UIFont.labelFontSize) else {
 //            fatalError("""
@@ -64,5 +88,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+   
 
 }

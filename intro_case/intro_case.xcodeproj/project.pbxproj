@@ -56,6 +56,9 @@
 		6E76C8AD29C49711001A243A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8AB29C49711001A243A /* ProfileViewController.swift */; };
 		6E76C8AE29C49711001A243A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E76C8AC29C49711001A243A /* ProfileViewController.xib */; };
 		6E76C8B029C5AC99001A243A /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8AF29C5AC98001A243A /* TabBarModel.swift */; };
+		6E76C8B629C86B1D001A243A /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8B529C86B1C001A243A /* LogInCoordinator.swift */; };
+		6E76C8BA29C871C1001A243A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E76C8B829C871C0001A243A /* ProfileTableViewCell.swift */; };
+		6E76C8BB29C871C1001A243A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E76C8B929C871C1001A243A /* ProfileTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +113,9 @@
 		6E76C8AB29C49711001A243A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6E76C8AC29C49711001A243A /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		6E76C8AF29C5AC98001A243A /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		6E76C8B529C86B1C001A243A /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
+		6E76C8B829C871C0001A243A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		6E76C8B929C871C1001A243A /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +240,7 @@
 				6E76C89029C48E12001A243A /* BasketCoordinator.swift */,
 				6E76C89229C48E57001A243A /* MessageCoordinator.swift */,
 				6E76C89429C48EB4001A243A /* ProfileCoordinator.swift */,
+				6E76C8B529C86B1C001A243A /* LogInCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -286,10 +293,20 @@
 		6E76C89A29C48F20001A243A /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				6E76C8B729C87128001A243A /* ProfileCells */,
 				6E76C8AB29C49711001A243A /* ProfileViewController.swift */,
 				6E76C8AC29C49711001A243A /* ProfileViewController.xib */,
 			);
 			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		6E76C8B729C87128001A243A /* ProfileCells */ = {
+			isa = PBXGroup;
+			children = (
+				6E76C8B829C871C0001A243A /* ProfileTableViewCell.swift */,
+				6E76C8B929C871C1001A243A /* ProfileTableViewCell.xib */,
+			);
+			path = ProfileCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +380,7 @@
 				6E215E8029C1AC00003B5C33 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				6E215E7D29C1AC00003B5C33 /* Montserrat-Regular.ttf in Resources */,
 				6E215E4329C1A3A4003B5C33 /* LaunchScreen.storyboard in Resources */,
+				6E76C8BB29C871C1001A243A /* ProfileTableViewCell.xib in Resources */,
 				6E215E7329C1AC00003B5C33 /* Montserrat-ThinItalic.ttf in Resources */,
 				6E215E7E29C1AC00003B5C33 /* Montserrat-Italic.ttf in Resources */,
 				6E215E8129C1AC00003B5C33 /* OFL.txt in Resources */,
@@ -392,6 +410,7 @@
 			files = (
 				6E215E5029C1A927003B5C33 /* LoginViewController.swift in Sources */,
 				6E76C88B29C48BA8001A243A /* TabBarController.swift in Sources */,
+				6E76C8B629C86B1D001A243A /* LogInCoordinator.swift in Sources */,
 				6E76C88D29C48C8A001A243A /* HomeCoordinator.swift in Sources */,
 				6E76C88629C4752C001A243A /* MainCoordinator.swift in Sources */,
 				6E76C8A129C496DF001A243A /* FavoriteViewController.swift in Sources */,
@@ -404,6 +423,7 @@
 				6E76C88429C47432001A243A /* StartCoordinator.swift in Sources */,
 				6E76C89529C48EB4001A243A /* ProfileCoordinator.swift in Sources */,
 				6E76C89329C48E57001A243A /* MessageCoordinator.swift in Sources */,
+				6E76C8BA29C871C1001A243A /* ProfileTableViewCell.swift in Sources */,
 				6E215E5429C1A948003B5C33 /* SignInViewController.swift in Sources */,
 				6E76C8A929C49700001A243A /* MessageViewController.swift in Sources */,
 				6E76C88F29C48DBD001A243A /* FavoriteCoordinator.swift in Sources */,

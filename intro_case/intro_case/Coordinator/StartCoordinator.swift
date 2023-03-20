@@ -11,6 +11,7 @@ import UIKit
 
 protocol StartFlow: class {
     func coordinateToTabBar()
+    func coordinateToLogIn()
 }
 
 class StartCoordinator: Coordinator, StartFlow {
@@ -25,7 +26,8 @@ class StartCoordinator: Coordinator, StartFlow {
         
         let startViewController = SignInViewController()
         startViewController.coordinator = self
-        navigationController.pushViewController(startViewController, animated: false)
+        navigationController.setViewControllers([startViewController], animated: false)
+       // navigationController.pushViewController(startViewController, animated: false)
         
     }
     
@@ -33,6 +35,11 @@ class StartCoordinator: Coordinator, StartFlow {
         
         let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
         coordinate(to: tabBarCoordinator)
+    }
+    
+    func coordinateToLogIn() {
+        let logInCoordinator = LogInCoordinator(navigationController: navigationController)
+        coordinate(to: logInCoordinator)
     }
     
 }
