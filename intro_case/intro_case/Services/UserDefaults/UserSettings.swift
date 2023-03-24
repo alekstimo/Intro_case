@@ -80,11 +80,21 @@ class UserSettings {
 
         if (encodedUser != nil)
         {
-            let user = NSKeyedUnarchiver.unarchiveObject(with: encodedUser! as Data) as? Users
-            if (user != nil)
-            {
-                return user!.firstname! + " " + user!.lastname!
+//            let user = NSKeyedUnarchiver.unarchiveObject(with: encodedUser! as Data) as? Users
+            do {
+               
+                let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(encodedUser! as Data) as! Users
+               return (unarchivedData.firstname)! + " " + (unarchivedData.lastname)!
             }
+            catch {
+                fatalError("Didn't work")
+            }
+//            if (user != nil)
+//            {
+//
+//                return user!.firstname! + " " + user!.lastname!
+//            }
+        
         }
         return " "
     }
@@ -95,10 +105,19 @@ class UserSettings {
 
         if (encodedUser != nil)
         {
-            let user = NSKeyedUnarchiver.unarchiveObject(with: encodedUser! as Data) as? Users
-            if (user != nil)
-            {
-                return user!.password!
+//            let user = NSKeyedUnarchiver.unarchiveObject(with: encodedUser! as Data) as? Users
+//            if (user != nil)
+//            {
+//                return user!.password!
+//            }
+            
+            do {
+               
+                let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(encodedUser! as Data) as! Users
+               return (unarchivedData.password)!
+            }
+            catch {
+                fatalError("Didn't work")
             }
         }
         return " "
@@ -107,8 +126,12 @@ class UserSettings {
 //MARK: - Private Methods
 
     private func saveItemToUserDefaults(item: Users) {
-        let encodedLanguageTranslateFrom = NSKeyedArchiver.archivedData(withRootObject: item)
-        userDefaults.set(encodedLanguageTranslateFrom, forKey: item.firstname!)
+        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: item, requiringSecureCoding: false) else { return }
+        UserDefaults.standard.set(data, forKey: item.firstname!)
+        
+        
+//        let encodedLanguageTranslateFrom = NSKeyedArchiver.archivedData(withRootObject: item)
+//        userDefaults.set(encodedLanguageTranslateFrom, forKey: item.firstname!)
         //userDefaults.set(item, forKey: item.firstname!)
      }
     private func removeItemFromUserDefaults(key: String) {

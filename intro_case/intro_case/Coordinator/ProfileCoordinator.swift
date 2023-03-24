@@ -29,8 +29,12 @@ class ProfileCoordinator: Coordinator, ProfileFlow {
     
     func coordinateToSignIn() {
         
-        let signInCoordinator = StartCoordinator(navigationController: navigationController!)
-        coordinate(to: signInCoordinator)
+//        let signInCoordinator = StartCoordinator(navigationController: navigationController!)
+//        coordinate(to: signInCoordinator)
+        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+        let mainCoordinator = MainCoordinator(window: appDelegate.window!)
+        coordinate(to: mainCoordinator)
+        
     }
    
 }
