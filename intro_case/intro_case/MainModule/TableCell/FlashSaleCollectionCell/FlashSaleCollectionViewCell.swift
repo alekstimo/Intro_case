@@ -49,6 +49,18 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
+        let tapRecognaizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        flashSaleImage.isUserInteractionEnabled = true
+        flashSaleImage.addGestureRecognizer(tapRecognaizer)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        flashSaleImage.image = nil
+    }
+    
+    @objc func imageTapped() {
+        NotificationCenter.default.post(name: NSNotification.Name("toDetail"), object: Any?.self)
     }
 
     private func configure() {

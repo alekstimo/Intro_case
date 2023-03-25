@@ -41,7 +41,10 @@ class CollectionViewCell: UICollectionViewCell {
 //            productImageView.image = resizeImage(image: productImageView.image!, targetSize: CGSize(width: 144, height: 221))
             }
     }
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        productImageView.image = nil
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()

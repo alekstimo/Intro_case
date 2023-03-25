@@ -37,4 +37,5 @@ extension LatestResponseModel {
 enum TopCodingKeys: String, CodingKey{
     case latest
     case flash_sale
+    
 }

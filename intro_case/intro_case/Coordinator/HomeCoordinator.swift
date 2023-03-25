@@ -29,7 +29,7 @@ class HomeCoordinator: Coordinator, HomeFlow {
     }
     //MARK: - Flow Methods
     func coordinateToDetail() {
-//        let detailCoordinator = DetailCoordinator(navigationController: navigationController)
-//        coordinate(to: detailCoordinator)
+        let detailCoordinator = DetailCoordinator(navigationController: navigationController!)
+        coordinate(to: detailCoordinator)
     }
 }

@@ -37,7 +37,12 @@ class MainViewController: UIViewController {
         configureNavigationBar()
         configureCollectionView()
         configureTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(toDetail), name: NSNotification.Name("toDetail"), object: nil)
     
+    }
+    
+    @objc func toDetail(notification: NSNotification) {
+        coordinator?.coordinateToDetail()
     }
     private func configureNavigationBar() {
       

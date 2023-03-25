@@ -98,5 +98,8 @@ extension FlashSaleTableViewCell: UICollectionViewDelegateFlowLayout, UICollecti
         return 9
 
     }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        NotificationCenter.default.post(name: NSNotification.Name("toDetail"), object: Any?.self)
+//    }
 
 }
