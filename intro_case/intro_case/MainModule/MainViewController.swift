@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+var isPresent = false
 struct Category {
     var title: String
     var imageName: String
@@ -20,6 +20,7 @@ struct Category {
 
 class MainViewController: UIViewController {
 
+    var popVCSearchTips = SearchViewController()
     var coordinator: HomeFlow?
     
     let categoryArray = [Category(title: "Phones", imageName: "PhonesImage"),Category(title: "Headphones", imageName: "HeadphonesImage"),Category(title: "Games", imageName: "GamesImage"),Category(title: "Cars", imageName: "CarsImage"),Category(title: "Furniture", imageName: "FurnitureImage"),Category(title: "kids", imageName: "KidsImage")]
@@ -61,6 +62,26 @@ class MainViewController: UIViewController {
        // print("menuButtonTapped")
        
     }
+    
+    
+    //MARK: SearchBar events
+    @IBAction func searchBarEditindDidEnd(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){ [self] in
+            if popVCSearchTips.editText(text: searchBar.text ?? "") {
+                popVCSearchTips.modalPresentationStyle = .popover
+                let popOverVc = popVCSearchTips.popoverPresentationController
+                popOverVc?.delegate = self
+                popOverVc?.sourceView = self.searchBar
+                popOverVc?.sourceRect = CGRect(x: self.searchBar.bounds.midX , y: self.searchBar.bounds.maxY, width: 0, height: 0)
+                popVCSearchTips.preferredContentSize = CGSize(width: 250, height: 100)
+                
+                self.present(popVCSearchTips, animated: true)
+            }
+        }
+       
+    }
+   
+    
     private func customSearchBar(){
        
         searchBar.layer.cornerRadius = 15
@@ -106,6 +127,12 @@ class MainViewController: UIViewController {
         //tableView.rowHeight = UITableView.automaticDimension
     }
 
+}
+// MARK: - UIPopOver
+extension MainViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
 
 // MARK: - UICollection

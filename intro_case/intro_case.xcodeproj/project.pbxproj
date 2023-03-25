@@ -35,6 +35,10 @@
 		6E215E8029C1AC00003B5C33 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E215E6B29C1AC00003B5C33 /* Montserrat-ExtraBoldItalic.ttf */; };
 		6E215E8129C1AC00003B5C33 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E215E6C29C1AC00003B5C33 /* OFL.txt */; };
 		6E215E8329C1B5DD003B5C33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E215E8229C1B5DD003B5C33 /* Assets.xcassets */; };
+		6E4AAE6A29CEE8A700C321E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AAE6829CEE8A700C321E3 /* SearchViewController.swift */; };
+		6E4AAE6B29CEE8A700C321E3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4AAE6929CEE8A700C321E3 /* SearchViewController.xib */; };
+		6E4AAE7329CEEB6400C321E3 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AAE7129CEEB6400C321E3 /* SearchTableViewCell.swift */; };
+		6E4AAE7429CEEB6400C321E3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4AAE7229CEEB6400C321E3 /* SearchTableViewCell.xib */; };
 		6E60902529CAF326005D2DAE /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E60902329CAF326005D2DAE /* CategoryCollectionViewCell.swift */; };
 		6E60902629CAF326005D2DAE /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E60902429CAF326005D2DAE /* CategoryCollectionViewCell.xib */; };
 		6E60903629CB20A1005D2DAE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E60903429CB20A1005D2DAE /* CollectionViewCell.swift */; };
@@ -117,6 +121,10 @@
 		6E215E6B29C1AC00003B5C33 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		6E215E6C29C1AC00003B5C33 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		6E215E8229C1B5DD003B5C33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E4AAE6829CEE8A700C321E3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6E4AAE6929CEE8A700C321E3 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		6E4AAE7129CEEB6400C321E3 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		6E4AAE7229CEEB6400C321E3 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		6E60902329CAF326005D2DAE /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		6E60902429CAF326005D2DAE /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E60903429CB20A1005D2DAE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -279,6 +287,25 @@
 			path = static;
 			sourceTree = "<group>";
 		};
+		6E4AAE6729CEE87B00C321E3 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				6E4AAE6C29CEEAC400C321E3 /* Cell */,
+				6E4AAE6829CEE8A700C321E3 /* SearchViewController.swift */,
+				6E4AAE6929CEE8A700C321E3 /* SearchViewController.xib */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		6E4AAE6C29CEEAC400C321E3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E4AAE7129CEEB6400C321E3 /* SearchTableViewCell.swift */,
+				6E4AAE7229CEEB6400C321E3 /* SearchTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		6E60902229CAF309005D2DAE /* CategoryCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +416,7 @@
 		6E76C89629C48EF2001A243A /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				6E4AAE6729CEE87B00C321E3 /* SearchModule */,
 				6E60902E29CB1E68005D2DAE /* TableCell */,
 				6E60902229CAF309005D2DAE /* CategoryCells */,
 				6E76C89B29C48F38001A243A /* MainViewController.swift */,
@@ -548,6 +576,7 @@
 				6E60903729CB20A1005D2DAE /* CollectionViewCell.xib in Resources */,
 				6E215E4329C1A3A4003B5C33 /* LaunchScreen.storyboard in Resources */,
 				6E76C8BB29C871C1001A243A /* ProfileTableViewCell.xib in Resources */,
+				6E4AAE6B29CEE8A700C321E3 /* SearchViewController.xib in Resources */,
 				6E215E7329C1AC00003B5C33 /* Montserrat-ThinItalic.ttf in Resources */,
 				6E215E7E29C1AC00003B5C33 /* Montserrat-Italic.ttf in Resources */,
 				6E215E8129C1AC00003B5C33 /* OFL.txt in Resources */,
@@ -556,6 +585,7 @@
 				6E76C8AE29C49711001A243A /* ProfileViewController.xib in Resources */,
 				6E60905429CB417C005D2DAE /* FlashSaleTableViewCell.xib in Resources */,
 				6E76C8A629C496EF001A243A /* BasketViewController.xib in Resources */,
+				6E4AAE7429CEEB6400C321E3 /* SearchTableViewCell.xib in Resources */,
 				6E215E7929C1AC00003B5C33 /* Montserrat-SemiBold.ttf in Resources */,
 				6E215E6E29C1AC00003B5C33 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
 				6E215E7029C1AC00003B5C33 /* Montserrat-Medium.ttf in Resources */,
@@ -608,10 +638,12 @@
 				6E60905829CB43C0005D2DAE /* FlashSaleCollectionViewCell.swift in Sources */,
 				6E76C8BA29C871C1001A243A /* ProfileTableViewCell.swift in Sources */,
 				6E215E5429C1A948003B5C33 /* SignInViewController.swift in Sources */,
+				6E4AAE7329CEEB6400C321E3 /* SearchTableViewCell.swift in Sources */,
 				6E76C8A929C49700001A243A /* MessageViewController.swift in Sources */,
 				6E76C88F29C48DBD001A243A /* FavoriteCoordinator.swift in Sources */,
 				6EB9E21A29CB55AA0075C976 /* LatestTableViewCell.swift in Sources */,
 				6E76C8A529C496EF001A243A /* BasketViewController.swift in Sources */,
+				6E4AAE6A29CEE8A700C321E3 /* SearchViewController.swift in Sources */,
 				6E76C87A29C46EA6001A243A /* Coordnator.swift in Sources */,
 				6E60905029CB3217005D2DAE /* LatestResponseModel.swift in Sources */,
 				6E76C8BF29C8AD07001A243A /* UserSettings.swift in Sources */,

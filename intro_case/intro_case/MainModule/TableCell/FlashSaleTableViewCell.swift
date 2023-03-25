@@ -43,7 +43,7 @@ class FlashSaleTableViewCell: UITableViewCell {
         model.loadPosts()
         
         
-        divisionCollectionView.reloadData()
+        //divisionCollectionView.reloadData()
         
     }
     

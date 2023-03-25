@@ -44,7 +44,7 @@ class LatestTableViewCell: UITableViewCell {
         configureModel()
         model.loadPosts()
         
-        divisionCollectionView.reloadData()
+        //divisionCollectionView.reloadData()
         
         
         
