@@ -25,7 +25,7 @@ struct FlashSaleObjectModel {
     internal init(imageUrlInString: String, name: String,category: String, price: Double,discount: Int) {
             self.imageUrlInString = imageUrlInString
             self.name = name
-            self.price = String(price)
+            self.price = formatter(price: price)
             self.category = category
             self.discount = String(discount)
     }
@@ -103,5 +103,14 @@ final class FlashSaleModel {
         loadPosts()
     }
     
+}
+private func formatter(price: Double) -> String {
+    let nPrice = NSNumber(floatLiteral: price)
+    let formatter = NumberFormatter()
+    formatter.maximumFractionDigits = 2
+    formatter.groupingSeparator = ""
+    formatter.decimalSeparator = ","
+    formatter.numberStyle = .decimal
+    return formatter.string(from: nPrice)!
 }
 

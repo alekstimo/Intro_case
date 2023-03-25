@@ -37,9 +37,9 @@ class FlashSaleTableViewCell: UITableViewCell {
         divisionCollectionView.showsVerticalScrollIndicator = false
         divisionCollectionView.delegate = self
         divisionCollectionView.dataSource = self
-        divisionCollectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
-        configureModel()
+        divisionCollectionView.contentInset = .init(top: 0, left: 11, bottom: 0, right: 0)
         
+        configureModel()
         model.loadPosts()
         
         
@@ -88,11 +88,11 @@ extension FlashSaleTableViewCell: UICollectionViewDelegateFlowLayout, UICollecti
         return CGSize(width: 174, height: 221)
        
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-
-        return 9
-
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 9
+//
+//    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 9

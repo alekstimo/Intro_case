@@ -26,6 +26,9 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e5Z-YB-jFW">
                         <rect key="frame" x="0.0" y="0.0" width="158" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="e5Z-YB-jFW" secondAttribute="height" multiplier="174:221" priority="950" id="75Q-nS-8t4"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMK-lj-Z2H">
                         <rect key="frame" x="10.666666666666666" y="171.66666666666666" width="27.666666666666671" height="12.333333333333343"/>
@@ -83,9 +86,9 @@
                         <buttonConfiguration key="configuration" style="plain" image="toFavorite"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzN-jr-1yK">
-                        <rect key="frame" x="9.6666666666666643" y="149" width="57.999999999999993" height="14.666666666666657"/>
+                        <rect key="frame" x="9.6666666666666643" y="149" width="82" height="14.666666666666657"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="58" id="ijm-fL-hHE"/>
+                            <constraint firstAttribute="width" constant="82" id="ijm-fL-hHE"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

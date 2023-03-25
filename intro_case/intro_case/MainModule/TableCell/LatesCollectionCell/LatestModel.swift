@@ -20,10 +20,10 @@ struct LatestObjectModel {
     
 
         // MARK: - Initialization
-    internal init(imageUrlInString: String, name: String,category: String, price: Double) {
+    internal init(imageUrlInString: String, name: String,category: String, price: String) {
             self.imageUrlInString = imageUrlInString
             self.name = name
-            self.price = String(price)
+            self.price = price
             self.categoty = category
     }
     
@@ -32,7 +32,7 @@ struct LatestObjectModel {
             imageUrlInString: "https://www.dhresource.com/0x0/f2/albu/g8/M01/9D/19/rBVaV1079WeAEW-AAARn9m_Dmh0487.jpg",
             name: "Samsung S10",
             category: "Phones",
-            price: 1000
+            price:  "1000"
            )
         }
     
@@ -66,7 +66,7 @@ final class latestModel {
         //print(latest)
         latest.forEach { item in
            // print(item)
-            items.append(LatestObjectModel(imageUrlInString: item.image_url, name: item.name, category: item.category, price: item.price))
+            items.append(LatestObjectModel(imageUrlInString: item.image_url, name: item.name, category: item.category, price: formatter(price: item.price) ))
         }
 //        items = latest.map { item in LatestObjectModel(imageUrlInString: item.image_url, name: item.name, category: item.category, price: item.price)
        // }
@@ -97,3 +97,10 @@ final class latestModel {
     
 }
 
+private func formatter(price: Double) -> String {
+    let nPrice = NSNumber(floatLiteral: price)
+    let formatter = NumberFormatter()
+    formatter.groupingSeparator = ","
+    formatter.numberStyle = .decimal
+    return formatter.string(from: nPrice)!
+}

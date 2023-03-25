@@ -51,6 +51,7 @@ class CollectionViewCell: UICollectionViewCell {
         categoryLabel.layer.cornerRadius = 5
         addToCartButton.layer.cornerRadius = 10
         productImageView.layer.cornerRadius = 10
+        productImageView?.contentMode = .scaleAspectFill
         
         
     }

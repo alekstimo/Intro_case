@@ -53,10 +53,11 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
 
     private func configure() {
         discountLabel.layer.masksToBounds = true
-        discountLabel.layer.cornerRadius = 10
+        discountLabel.layer.cornerRadius = 8
         
         categoryLabel.layer.masksToBounds = true
         categoryLabel.layer.cornerRadius = 10
         flashSaleImage.layer.cornerRadius = 10
+        flashSaleImage?.contentMode = .scaleAspectFill
     }
 }

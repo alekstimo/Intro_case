@@ -39,10 +39,12 @@ class LatestTableViewCell: UITableViewCell {
         divisionCollectionView.showsVerticalScrollIndicator = false
         divisionCollectionView.delegate = self
         divisionCollectionView.dataSource = self
-        divisionCollectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        divisionCollectionView.contentInset = .init(top: 0, left: 11, bottom: 0, right: 0)
         
-        model.loadPosts()
         configureModel()
+        model.loadPosts()
+        
+        divisionCollectionView.reloadData()
         
         
         
@@ -64,7 +66,7 @@ private extension LatestTableViewCell {
 }
 
 // MARK: UICollectionViewDataSource
-extension LatestTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension LatestTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,10 +87,6 @@ extension LatestTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 114, height: 149)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
