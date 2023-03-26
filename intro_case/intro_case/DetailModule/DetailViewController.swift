@@ -9,8 +9,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var slectedIndexPath = IndexPath(indexes: [0,1])
-    var count = 1
+    
+    
+    //MARK: - UIView
     @IBOutlet weak var totalView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
@@ -22,16 +23,17 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var colorButton2: UIButton!
     @IBOutlet private weak var colorButton3: UIButton! //ЦВЕТОВ МОЖЕТ БЫТЬ МНОГО! переделать?
     @IBOutlet private weak var photoCollectionView: UICollectionView!
-    
     @IBOutlet weak var plusButton: UIButton!
-    
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     
-    
+    //MARK: - Property
     var coordinator: DetailCoordinator?
-    
+    var slectedIndexPath = IndexPath(indexes: [0,1])
+    var count = 1
     var model: detailModel = .init()
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -39,7 +41,7 @@ class DetailViewController: UIViewController {
         configure()
     }
 
-
+    //MARK: - Color buttons events
     @IBAction func colorButtonTouched(_ sender: UIButton) {
         colorButton1.layer.borderWidth = 0
         colorButton2.layer.borderWidth = 0
@@ -48,6 +50,7 @@ class DetailViewController: UIViewController {
         
     }
     
+    //MARK: - Change count buttons events
     @IBAction func priceChange(_ sender: UIButton) {
         
             switch sender.tag {
@@ -68,6 +71,7 @@ class DetailViewController: UIViewController {
     
 }
 
+//MARK: - Private 
 private extension DetailViewController {
     
     

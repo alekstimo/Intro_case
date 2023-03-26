@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
 
     var coordinator: ProfileFlow?
     
+    //MARK: - UIView
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var uploadButton: UIButton!
@@ -25,17 +26,9 @@ class ProfileViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+//MARK: - Private
 private extension ProfileViewController {
     func configureAppearance() {
         view.backgroundColor = UIColor(named: "backgroundColor")

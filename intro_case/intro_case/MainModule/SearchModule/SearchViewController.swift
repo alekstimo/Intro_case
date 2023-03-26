@@ -9,11 +9,11 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    
+    //MARK: - Property
     private var searchTips = ["Adidas Yeezy","Sony Plastation","Nike Air","Puma","BMW X6","Jack Daniels","New Balance","Reebok Classic","Rolex"]
     private var filtred: [String] = []
    
-    
+    //MARK: - UIView
     @IBOutlet weak var tipsTableView: UITableView!
    
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class SearchViewController: UIViewController {
         preferredContentSize = CGSize(width: 250, height: tipsTableView.contentSize.height)
     }
     
+    //MARK: - Edit text function
     func editText(text: String) -> Bool {
         filtred = []
         var flag = false
@@ -48,6 +49,7 @@ class SearchViewController: UIViewController {
        // tipsTableView.reloadData()
     }
     
+    //MARK: - Configuration
     func configureAppearance() {
         configureTableView()
     }

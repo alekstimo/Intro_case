@@ -9,6 +9,7 @@ import UIKit
 
 class FlashSaleCollectionViewCell: UICollectionViewCell {
 
+    //MARK: - UIView
     @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -62,6 +63,8 @@ class FlashSaleCollectionViewCell: UICollectionViewCell {
     @objc func imageTapped() {
         NotificationCenter.default.post(name: NSNotification.Name("toDetail"), object: Any?.self)
     }
+    
+    //MARK: - Configuration
 
     private func configure() {
         discountLabel.layer.masksToBounds = true

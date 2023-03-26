@@ -20,6 +20,7 @@ struct Category {
 
 class MainViewController: UIViewController {
 
+    //MARK: - Property
     var popVCSearchTips = SearchViewController()
     var coordinator: HomeFlow?
     
@@ -27,6 +28,7 @@ class MainViewController: UIViewController {
     
     
     
+    //MARK: - UIView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet var titleView: UIView!
@@ -44,6 +46,8 @@ class MainViewController: UIViewController {
     @objc func toDetail(notification: NSNotification) {
         coordinator?.coordinateToDetail()
     }
+    
+    //MARK: - Configuration
     private func configureNavigationBar() {
       
         let leftMenu = UIBarButtonItem(image: resizeImage( image: UIImage(named: "menuMainPage")!, targetSize: CGSize(width: 22, height: 24)),
@@ -57,12 +61,11 @@ class MainViewController: UIViewController {
         searchBar.sizeToFit()
         customSearchBar()
 
-       // titleView.frame.size = CGSize(width: 200, height: 25)
+       
         titleView.sizeToFit()
-//        navigationItem.accessibilityFrame.size = CGSize(width: navigationItem.accessibilityFrame.width, height: rightNavigationItemView.frame.height)
         navigationItem.titleView = titleView
-       // navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightNavigationItemView)
     }
+    
     @objc func menuButtonTapped(){
        // print("menuButtonTapped")
        
@@ -105,6 +108,8 @@ class MainViewController: UIViewController {
         
          
     }
+    
+    //MARK: - Configuration collection view
     func configureCollectionView() {
         categoryCollectionView.register(UINib(nibName: "\(CategoryCollectionViewCell.self)", bundle: .main),
                                 forCellWithReuseIdentifier: "\(CategoryCollectionViewCell.self)")
@@ -116,6 +121,7 @@ class MainViewController: UIViewController {
         categoryCollectionView.contentInset = .init(top: 0, left: 12, bottom: 0, right: 12)
     }
     
+    //MARK: - Configuration table view
     func configureTableView() {
         tableView.backgroundColor = UIColor(named: "backgroundColor")
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -124,12 +130,11 @@ class MainViewController: UIViewController {
                            forCellReuseIdentifier: "\(LatestTableViewCell.self)")
         tableView.register(UINib(nibName: "\(FlashSaleTableViewCell.self)", bundle: .main),
                            forCellReuseIdentifier: "\(FlashSaleTableViewCell.self)")
-        //tableView.rowHeight = 65
+       
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        //tableView.rowHeight = 400
-        //tableView.rowHeight = UITableView.automaticDimension
+        
     }
 
 }
@@ -168,11 +173,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
     }
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return Constants.spaceBetweenElements
-//
-//    }
-    
 
 }
 
@@ -210,11 +210,5 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard indexPath.row == 6 else { return }
-//        currentUser = " "
-//        coordinator?.coordinateToSignIn()
-//    }
-
 }
 

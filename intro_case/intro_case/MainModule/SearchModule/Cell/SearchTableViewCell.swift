@@ -9,6 +9,7 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
+    //MARK: - UIView
     @IBOutlet weak var titleLabel: UILabel!
   
     var text: String = "" {
@@ -22,6 +23,7 @@ class SearchTableViewCell: UITableViewCell {
         configureApperance()
     }
 
+    //MARK: - Configuration
     private func configureApperance() {
       //  selectionStyle = .none
         titleLabel.textColor = .black

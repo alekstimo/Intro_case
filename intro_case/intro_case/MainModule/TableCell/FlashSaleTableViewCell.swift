@@ -10,10 +10,12 @@ import UIKit
 class FlashSaleTableViewCell: UITableViewCell {
 
     private let model: FlashSaleModel = .init()
-   // private let allType: [TypeCollection] = [.latest, .flashSale]
+   
+    //MARK: - UIView
     @IBOutlet weak var divisionTatleLabel: UILabel!
     @IBOutlet weak var divisionCollectionView: UICollectionView!
-    //let latesCollectionVC = LatesCollectionViewController()
+    
+    //MARK: - Property
     var title: String = "" {
         didSet {
             divisionTatleLabel.text = title
@@ -27,6 +29,8 @@ class FlashSaleTableViewCell: UITableViewCell {
         
         configureApperance()
     }
+    
+    //MARK: - Confiuration
     func configureApperance() {
         
         selectionStyle = .none
@@ -87,18 +91,12 @@ extension FlashSaleTableViewCell: UICollectionViewDelegateFlowLayout, UICollecti
         return CGSize(width: 174, height: 221)
        
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//
-//        return 9
-//
-//    }
+
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 9
 
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        NotificationCenter.default.post(name: NSNotification.Name("toDetail"), object: Any?.self)
-//    }
+
 
 }

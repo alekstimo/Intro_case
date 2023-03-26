@@ -9,6 +9,8 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
+    
+    //MARK: - UIView
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -49,6 +51,8 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configure()
     }
+    
+    //MARK: - Configuration
     private func configure() {
         categoryLabel.layer.masksToBounds = true
         categoryLabel.layer.cornerRadius = 5

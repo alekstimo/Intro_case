@@ -9,8 +9,11 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
 
+    //MARK: - UIView
     @IBOutlet private weak var productImageView: UIImageView!
     
+    
+    //MARK: - Property
     var imageUrlInString: String = "" {
         didSet {
                 guard let url = URL(string: imageUrlInString) else {
@@ -19,6 +22,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
                 productImageView.loadImage(from: url)
             }
     }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         productImageView.layer.cornerRadius = 10

@@ -9,7 +9,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
-    
+    //MARK: - UIView
     @IBOutlet private weak var firstNameTextField: UITextField!
     @IBOutlet private weak var lastNameTexField: UITextField!
     @IBOutlet private weak var emailTextField: UITextField!
@@ -21,6 +21,7 @@ class SignInViewController: UIViewController {
     var coordinator: StartFlow?
     var usersStorage = UserSettings.shared
     
+    //MARK: - Sign in button events
     @IBAction func signinButtonTouched(_ sender: Any) {
         guard firstNameTextField.text != "", lastNameTexField.text  != "" , emailTextField.text  != "" else {
             showAlert(text: "Ошибка", description: "Поля не должны быть пустыми")
@@ -57,7 +58,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         configure()
     }
-
+    //MARK: - Configuration
     private func configure() {
         firstNameTextField.clipsToBounds = true
         firstNameTextField.layer.cornerRadius = 12
@@ -83,40 +84,8 @@ class SignInViewController: UIViewController {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "textFieldColorText") ?? .black]
         )
         
-        
-        
-        
-//        guard let montserratForSignInButton = UIFont(name: "Montserrat-SemiBold", size: 20) else {
-//            fatalError("""
-//                Failed to load the "Montserrat" font.
-//                Make sure the font file is included in the project and the font name is spelled correctly.
-//                """
-//            )
-//        }
-//        guard let montserratForLogInButton = UIFont(name: "Montserrat", size: 12) else {
-//            fatalError("""
-//                Failed to load the "Montserrat" font.
-//                Make sure the font file is included in the project and the font name is spelled correctly.
-//                """
-//            )
-//        }
-//
-////        signinButton.titleLabel?.font = UIFontMetrics.default.scaledFont(for: montserratForSignInButton)
-//        signinButton.titleLabel?.font = montserratForSignInButton
-        //signinButton.titleLabel?.adjustsFontForContentSizeCategory = true
         signinButton.layer.cornerRadius = 15
-        
-        
-//        loginButton.titleLabel?.font = UIFontMetrics.default.scaledFont(for: montserratForLogInButton)
-//        loginButton.titleLabel?.adjustsFontForContentSizeCategory = true
-//        
-//        
-//        signInWithAppleButton.titleLabel?.font = UIFontMetrics.default.scaledFont(for: montserratForLogInButton)
-//        signInWithAppleButton.titleLabel?.adjustsFontForContentSizeCategory = true
-//        
-//        signinWithGoogleButton.titleLabel?.font = UIFontMetrics.default.scaledFont(for: montserratForLogInButton)
-//        signinWithGoogleButton.titleLabel?.adjustsFontForContentSizeCategory = true
-//        
+       
     }
     private func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._$+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

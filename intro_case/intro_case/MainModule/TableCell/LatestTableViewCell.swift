@@ -2,7 +2,7 @@
 //  LatestTableViewCell.swift
 //  intro_case
 //
-//  Created by Кирилл Зезюков on 22.03.2023.
+//
 //
 
 import UIKit
@@ -10,10 +10,12 @@ import UIKit
 class LatestTableViewCell: UITableViewCell {
 
     private let model: latestModel = .init()
-   // private let allType: [TypeCollection] = [.latest, .flashSale]
+   
+    //MARK: - UIView
     @IBOutlet weak var divisionTatleLabel: UILabel!
     @IBOutlet weak var divisionCollectionView: UICollectionView!
-    //let latesCollectionVC = LatesCollectionViewController()
+    
+    //MARK: - Property
     var title: String = "" {
         didSet {
             divisionTatleLabel.text = title
@@ -27,6 +29,8 @@ class LatestTableViewCell: UITableViewCell {
         
         configureApperance()
     }
+    
+    //MARK: - Configuration
     func configureApperance() {
         
         selectionStyle = .none
