@@ -20,7 +20,7 @@ class TabBarController: UITabBarController {
         self.tabBar.backgroundColor = .white
         
         
-        self.tabBar.layer.cornerRadius = 15
+        self.tabBar.layer.cornerRadius = 20
         
         
     }

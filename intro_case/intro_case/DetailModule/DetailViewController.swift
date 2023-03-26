@@ -116,7 +116,7 @@ private extension DetailViewController {
         navigationItem.leftBarButtonItem = backButton
         navigationItem.leftBarButtonItem?.tintColor = .black
         
-        totalView.layer.cornerRadius = 15
+        totalView.layer.cornerRadius = 20
         plusButton.layer.cornerRadius = 8
         minusButton.layer.cornerRadius = 8
         addToCartButton.layer.cornerRadius = 15

@@ -24,9 +24,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         productImageView.layer.cornerRadius = 10
         productImageView?.contentMode = .scaleAspectFill
     }
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        productImageView.image = nil
-    }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        productImageView.image = nil
+//    }
 
 }

@@ -38,7 +38,7 @@ class SearchViewController: UIViewController {
         //searchingText = text
         if text != "" && text != " " {
             for item in searchTips {
-                if item.lowercased().contains(text.lowercased()) {
+                if item.lowercased().hasPrefix(text.lowercased()) {
                     flag = true
                     filtred.append(item)
                 }
